@@ -1,0 +1,111 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.tickets {
+    margin: 0 auto;
+    margin-bottom: 5rem;
+
+
+    .tickets-title {
+        color: v.$white;
+        margin: 0 0 1rem 0;
+        text-align: center;
+    }
+
+    .tickets-line {
+        display: block;
+        margin: 0 auto;
+        max-width: 30%;
+        height: 2px;
+        color:v.$red; 
+        border-style: solid;
+        background-color: v.$red;
+        margin-bottom: 2.5rem;
+    }
+    
+    .tickets-container {
+        @include m.grid(1, 2rem);
+        justify-content: center;
+
+        @include m.tablet {
+            @include m.grid(3, 2rem);
+            align-items: center;
+        }
+    }
+}
+
+.ticket {
+    margin: 0 auto;
+    border-radius: 0.8rem;
+    border: solid 2px v.$grey;
+    padding: 0 1rem 1rem 1rem;
+    text-align: center;
+    min-width: 17rem;
+
+    @include m.tablet {
+        min-width: 14rem;
+    }
+
+    @include m.desktop {
+        min-width: 17rem;
+    }
+
+
+    &:hover {
+        border: solid 2px v.$white;
+    }
+    
+    
+    
+    &-header {
+        .ticket-title {
+            color: v.$white;
+            font-size: 1.8rem;
+            margin: 1rem;
+        }
+        .ticket-price {
+            color: v.$white;
+            background-color: rgba(177, 177, 177, 0.2);
+            margin: 0 -1rem 1rem;
+            padding: 0.5rem;
+        }
+    }
+
+    &-body {
+        color: v.$grey;
+        ul {
+            @include m.reset-list;
+            font-size: 1rem;      
+            margin-bottom: 1rem; 
+
+            li {
+                padding: 0.2rem;
+            }     
+
+            hr {
+                color:v.$grey; 
+                border-style: solid;
+                background-color: v.$grey;
+            }
+        }
+    }
+
+    &-footer {
+        .ticket-button {
+            background-color: rgba(255,255,255, 0);
+            color: v.$white;
+            border: solid 2px v.$white;
+            border-radius: 5rem;
+            padding: 0.6rem 1.2rem;
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+
+            &:hover {
+                background-color: v.$white;
+                color: v.$black;
+                transition: all .2s ease-in-out;
+                transform: scale(1.1);
+            }
+        }
+    }   
+}

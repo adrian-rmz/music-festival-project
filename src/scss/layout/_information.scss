@@ -1,0 +1,101 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.festival-information {
+    display: grid;
+    gap: 2rem;
+
+    @include m.phone {
+        @include m.grid(1,2rem);
+    }
+    @include m.tablet {
+        @include m.grid(2,2rem);
+    }
+    @include m.tablet {
+        @include m.grid(4,2rem);
+    }
+    margin-bottom: 5rem;
+}
+
+.information-box {
+    background-color: v.$darkBlue;
+    // max-width: 20rem;
+    // max-height: 20rem;
+    margin: auto;
+    padding: 2rem;
+
+    .information-icon {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .information-title {
+        font-size: 1.4rem;
+        text-align: center;
+        color: v.$white;
+    }
+
+    .information-line {
+        display: block;
+        margin: 0 auto;
+        max-width: 80%;
+        border-color: v.$red;
+    }
+
+    .information-text {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+}    
+
+.newsletter {
+    margin-bottom: 5rem;
+    .newsletter-title {
+        font-size: 3.6rem;
+        text-align: center;
+        color: v.$white;
+        margin: 0;
+    }
+
+    .newsletter-text {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    
+    .newsletter-form {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        column-gap: 2rem;
+        align-items: center;
+        max-width: 90%;
+        margin: 0 auto;
+        
+        
+        @include m.desktop {
+            max-width: 50%;
+        }        
+
+        input {
+            width: 100%;
+            margin: 0 auto;
+            padding: 1rem;
+            border: none;
+            border-bottom: 1px solid v.$white;
+            font-size: 1.4rem;
+            color: v.$white;
+            background-color: v.$darkBlue;
+        }
+
+        button {
+            background-color: v.$red;
+            border-radius: 8px;
+            border: none;
+            color: v.$white;
+            font-weight: 600;
+            letter-spacing: 2.5%;
+            padding: 0.5rem;
+        }
+    }
+}
